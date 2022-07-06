@@ -1,7 +1,17 @@
-import '../styles/globals.css'
+import Layout from "../Components/Layout";
+import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+export default function MyApp ({Component, pageProps}) {
+  return (
+    <Layout>
+      <Component {...pageProps} />
+      <style jsx global> {`
+        a {
+          color: black;
+          font-weight: bold;
+        }
+      `}
+      </style>
+    </Layout>
+  )
 }
-
-export default MyApp
